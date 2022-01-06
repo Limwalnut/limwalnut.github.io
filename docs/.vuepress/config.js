@@ -29,6 +29,10 @@ module.exports = {
         title: 'JavaScript',
         children: ['/notes/javascript/eventloop/', '/notes/javascript/scope/'],
         initialOpenGroupIndex: -1 // 可选的, 默认值是 0
+      },
+      {
+        title: 'Vue',
+        children: ['/notes/vue/defineProperty/'],
       }
     ]
   }
