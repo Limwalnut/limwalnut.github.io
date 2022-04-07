@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>引用赋值 | Lim Zhang Blog</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="This is Lim Zhang&#39;s personal blog for sharing frontend development technology.">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d8aedcf0.js" as="script"><link rel="preload" href="/assets/js/2.e443283d.js" as="script"><link rel="preload" href="/assets/js/14.741dce68.js" as="script"><link rel="prefetch" href="/assets/js/10.1f1f3708.js"><link rel="prefetch" href="/assets/js/11.0ff2f24e.js"><link rel="prefetch" href="/assets/js/12.be25feb1.js"><link rel="prefetch" href="/assets/js/13.b23fab9f.js"><link rel="prefetch" href="/assets/js/15.5ef1eeea.js"><link rel="prefetch" href="/assets/js/16.193f6369.js"><link rel="prefetch" href="/assets/js/17.3d457883.js"><link rel="prefetch" href="/assets/js/3.0c13fd64.js"><link rel="prefetch" href="/assets/js/4.55092137.js"><link rel="prefetch" href="/assets/js/5.02018b5a.js"><link rel="prefetch" href="/assets/js/6.bd7b0c2a.js"><link rel="prefetch" href="/assets/js/7.2328732a.js"><link rel="prefetch" href="/assets/js/8.9d46e39f.js"><link rel="prefetch" href="/assets/js/9.46c9d80a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Lim Zhang Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link router-link-active">
+  Notes
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link router-link-active">
+  Notes
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>About Me</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/" aria-current="page" class="sidebar-link">关于Lim</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/python/install/" class="sidebar-link">开始</a></li><li><a href="/notes/python/PEP8/" class="sidebar-link">PEP8规范是什么</a></li><li><a href="/notes/python/referenceAndCopy/" aria-current="page" class="active sidebar-link">引用赋值</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/python/referenceAndCopy/#引用赋值" class="sidebar-link">引用赋值</a></li><li class="sidebar-sub-header"><a href="/notes/python/referenceAndCopy/#赋值操作" class="sidebar-link">赋值操作</a></li><li class="sidebar-sub-header"><a href="/notes/python/referenceAndCopy/#可变类型与不可变类型" class="sidebar-link">可变类型与不可变类型</a></li><li class="sidebar-sub-header"><a href="/notes/python/referenceAndCopy/#拷贝" class="sidebar-link">拷贝</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Node.js</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="引用赋值"><a href="#引用赋值" class="header-anchor">#</a> 引用赋值</h2> <p>在引用赋值中，变量名和变量的真实值是分开保存的，变量名中保存的是真实值的一个指针，对变量赋值时，也是将这个指针赋值给新变量。</p> <p><strong>在 Python 语言中，无论什么数据类型，都是按照引用进行赋值的</strong>。</p> <p>通过 <code>id()</code> 方法可以查看变量的值在内存空间中的地址（复杂数据类型为首地址）</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 定义基本数据类型</span>
+a <span class="token operator">=</span> <span class="token number">100</span>
+b <span class="token operator">=</span> a
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token builtin">id</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#4484573056 4484573056</span>
+
+<span class="token comment"># 定义复杂数据类型</span>
+arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+arr2 <span class="token operator">=</span> arr1
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token builtin">id</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 140596305539552 140596305539552</span>
+</code></pre></div><h2 id="赋值操作"><a href="#赋值操作" class="header-anchor">#</a> 赋值操作</h2> <p>初始赋值操作后，a和b, arr1和arr2 都指向了同一个内存空间，这个时候如果重新对这些变量进行赋值操作，就会使其指向新的内存空间。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment"># 定义基本数据类型</span>
+a <span class="token operator">=</span> <span class="token number">100</span>
+b <span class="token operator">=</span> a
+b <span class="token operator">=</span> <span class="token number">1001</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token builtin">id</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#495673152 25390400</span>
+
+<span class="token comment"># 定义复杂数据类型</span>
+arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+arr2 <span class="token operator">=</span> arr1
+arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token builtin">id</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 29763904 29736272</span>
+</code></pre></div><h2 id="可变类型与不可变类型"><a href="#可变类型与不可变类型" class="header-anchor">#</a> 可变类型与不可变类型</h2> <p>Python 中有下面几种不可变类型：</p> <ul><li>数值型</li> <li>字符串型</li> <li>元组</li></ul> <p>除了不可变类型，其余的都是可变类型，如：</p> <ul><li>列表</li> <li>字典</li></ul> <p><strong>不可变类型</strong>，是无法修改的类型，我们无法在内存中直接修改这个变量，如果尝试对不可变类型进行修改，就会断开原始的引用，并重新分配内存地址。
+<strong>可变类型</strong>，是可以进行修改的类型，修改可变类型的值不会断开原始引用，比如通过 <code>arr1[1]=5</code>修改列表中的值，不会改变 <code>arr1</code>的指针指向。</p> <div class="language-python extra-class"><pre class="language-python"><code>arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+arr2 <span class="token operator">=</span> arr1
+arr1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">)</span> <span class="token comment">#[1, 2, 10] [1, 2, 10]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">id</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 4343835712</span>
+    a <span class="token operator">+=</span> a
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 4343836032</span>
+
+b <span class="token operator">=</span> <span class="token number">10</span>
+func<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token comment"># 10</span>
+</code></pre></div><h2 id="拷贝"><a href="#拷贝" class="header-anchor">#</a> 拷贝</h2> <p><strong>深拷贝</strong>——即python的copy模块提供的一个deepcopy方法。深拷贝会完全复制原变量相关的所有数据，在内存中生成一套完全一样的内容，在这个过程中我们对这两个变量中的一个进行任意修改都不会影响其他变量。</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> copy
+<span class="token builtin">dict</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span>
+x <span class="token operator">=</span> copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><p><strong>浅拷贝</strong>时改变可变类型第一层次数据，变量相互不受影响，第二层次就相互影响了，改一个，其他跟着变。对于简单的对象，深浅拷贝都是一样的。</p> <div class="language-python extra-class"><pre class="language-python"><code>x<span class="token operator">=</span><span class="token builtin">dict</span><span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes/python/PEP8/" class="prev">
+        PEP8规范是什么
+      </a></span> <span class="next"><a href="/notes/nodejs/npm/">
+        什么是NPM
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d8aedcf0.js" defer></script><script src="/assets/js/2.e443283d.js" defer></script><script src="/assets/js/14.741dce68.js" defer></script>
+  </body>
+</html>

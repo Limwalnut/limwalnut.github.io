@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>初识Proxy | Lim Zhang Blog</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="This is Lim Zhang&#39;s personal blog for sharing frontend development technology.">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d8aedcf0.js" as="script"><link rel="preload" href="/assets/js/2.e443283d.js" as="script"><link rel="preload" href="/assets/js/17.3d457883.js" as="script"><link rel="prefetch" href="/assets/js/10.1f1f3708.js"><link rel="prefetch" href="/assets/js/11.0ff2f24e.js"><link rel="prefetch" href="/assets/js/12.be25feb1.js"><link rel="prefetch" href="/assets/js/13.b23fab9f.js"><link rel="prefetch" href="/assets/js/14.741dce68.js"><link rel="prefetch" href="/assets/js/15.5ef1eeea.js"><link rel="prefetch" href="/assets/js/16.193f6369.js"><link rel="prefetch" href="/assets/js/3.0c13fd64.js"><link rel="prefetch" href="/assets/js/4.55092137.js"><link rel="prefetch" href="/assets/js/5.02018b5a.js"><link rel="prefetch" href="/assets/js/6.bd7b0c2a.js"><link rel="prefetch" href="/assets/js/7.2328732a.js"><link rel="prefetch" href="/assets/js/8.9d46e39f.js"><link rel="prefetch" href="/assets/js/9.46c9d80a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Lim Zhang Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link router-link-active">
+  Notes
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link router-link-active">
+  Notes
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>About Me</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/" aria-current="page" class="sidebar-link">关于Lim</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/vue/defineProperty/" class="sidebar-link">Object.defineProperty语法</a></li><li><a href="/notes/vue/proxy/" aria-current="page" class="active sidebar-link">初识Proxy</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/vue/proxy/#初识proxy" class="sidebar-link">初识Proxy</a></li><li class="sidebar-sub-header"><a href="/notes/vue/proxy/#proxy详细使用" class="sidebar-link">Proxy详细使用</a></li><li class="sidebar-sub-header"><a href="/notes/vue/proxy/#双向数据绑定" class="sidebar-link">双向数据绑定</a></li></ul></li><li><a href="/notes/vue/createApp/" class="sidebar-link">全局API</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Node.js</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="初识proxy"><a href="#初识proxy" class="header-anchor">#</a> 初识Proxy</h2> <p>在<code>MDN</code>中，关于<code>Proxy</code>是这样介绍的: <code>Proxy</code> 对象用于定义基本操作的自定义行为（如属性查找、赋值、枚举、函数调用等）。用比较通俗的话来解释:<code>Proxy</code>可以理解为一个拦截器，它可以在读取对象的属性，修改对象的属性，获取对象属性列表，通过<code>for in</code>循环等等操作对象的时候，去拦截对象上面的默认行为，然后去自己去定义这些行为。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+* target: 要兼容的对象，可以是一个对象，数组,函数等等
+* handler: 是一个对象，里面包含了可以监听这个对象的行为函数，比如上面例子里面的`get`与`set`
+* 同时会返回一个新的对象proxy, 为了能够触发handler里面的函数，必须要使用返回值去进行其他操作，比如修改值
+*/</span>
+<span class="token keyword">const</span> proxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> handler<span class="token punctuation">)</span>
+</code></pre></div><p>关于Proxy对象的具体用法可以在<code>MDN</code>上查看：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank" rel="noopener noreferrer">Proxy对象<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="proxy详细使用"><a href="#proxy详细使用" class="header-anchor">#</a> Proxy详细使用</h2> <h3 id="get"><a href="#get" class="header-anchor">#</a> get</h3> <blockquote><p>通过<code>proxy</code>去获取对象属性的时候，会触发<code>get</code>钩子函数</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * target: 目标对象，即通过proxy代理的对象
+ * key: 要访问的属性名称
+ * receiver: receiver相当于是我们要读取的属性的this,一般情况下他就是proxy对象本身
+ */</span>
+handle<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>key<span class="token punctuation">,</span> receiver<span class="token punctuation">)</span>
+</code></pre></div><h4 id="示例"><a href="#示例" class="header-anchor">#</a> 示例:</h4> <p>在封装<code>axios</code>请求的过程中，经常需要对异常请求进行封装，比如不同的状态码对应不同的提示信息，但是我们不可能枚举每一个状态码，我们希望可以进行统一提示，如提示为<code>系统异常，请联系管理员</code>，这时候就可以使用<code>Proxy</code>对错误信息进行代理处理</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 状态码提示信息</span>
+<span class="token keyword">const</span> errorMessage <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token number">400</span><span class="token operator">:</span> <span class="token string">'错误请求'</span><span class="token punctuation">,</span>
+  <span class="token number">401</span><span class="token operator">:</span> <span class="token string">'系统未授权，请重新登录'</span><span class="token punctuation">,</span>
+  <span class="token number">403</span><span class="token operator">:</span> <span class="token string">'拒绝访问'</span><span class="token punctuation">,</span>
+  <span class="token number">404</span><span class="token operator">:</span> <span class="token string">'请求失败，未找到该资源'</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> proxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>errorMessage<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> value <span class="token operator">=</span> target<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> value <span class="token operator">||</span> <span class="token string">'系统异常，请联系管理员'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 输出 错误请求</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>proxy<span class="token punctuation">[</span><span class="token number">400</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">// 输出 系统异常，请联系管理员</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>proxy<span class="token punctuation">[</span><span class="token number">500</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="set"><a href="#set" class="header-anchor">#</a> Set</h3> <blockquote><p>当给对象里面的属性赋值的时候，会触发<code>set</code>的钩子函数</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/**
+ * target: 目标对象，即通过proxy代理的对象
+ * key: 要赋值的属性名称
+ * value: 目标属性要赋的新值
+ * receiver: 与 get的receiver 基本一致
+ */</span>
+handle<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>key<span class="token punctuation">,</span>value<span class="token punctuation">,</span> receiver<span class="token punctuation">)</span>
+</code></pre></div><h4 id="示例-2"><a href="#示例-2" class="header-anchor">#</a> 示例：</h4> <p>在处理系统中的某些边界值的时候，我们可能需要特殊处理，比如大于<code>10</code>转化为<code>10</code>，小于<code>0</code>的值转换为<code>0</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">const</span> proxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      value <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      value <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span>
+    target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
+    <span class="token comment">// 对于set 来说，如果操作成功必须返回true, 否则会被视为失败</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+proxy<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+proxy<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">101</span><span class="token punctuation">)</span>
+proxy<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment">// 输出 [1, 10, 0]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span>
+</code></pre></div><h2 id="双向数据绑定"><a href="#双向数据绑定" class="header-anchor">#</a> 双向数据绑定</h2> <p>使用<code>订阅者-发布模式</code>，原理与Vue2.0相似，其中核心组成部分：</p> <ol><li>监听器<code>Observer</code>： 数据劫持</li> <li>订阅者容器： 监听器监听到数据变动时，遍历订阅者容器发布消息</li> <li><code>Compile</code>：解析模板指令，将模板中的变量替换成数据，比如<code></code></li> <li><code>Watcher</code>： 连接<code>Observe</code>和<code>Compile</code>的桥梁</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes/vue/defineProperty/" class="prev">
+        Object.defineProperty语法
+      </a></span> <span class="next"><a href="/notes/vue/createApp/">
+        全局API
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d8aedcf0.js" defer></script><script src="/assets/js/2.e443283d.js" defer></script><script src="/assets/js/17.3d457883.js" defer></script>
+  </body>
+</html>

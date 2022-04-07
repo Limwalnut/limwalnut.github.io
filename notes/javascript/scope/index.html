@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript 作用域 | Lim Zhang Blog</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="This is Lim Zhang&#39;s personal blog for sharing frontend development technology.">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d8aedcf0.js" as="script"><link rel="preload" href="/assets/js/2.e443283d.js" as="script"><link rel="preload" href="/assets/js/10.1f1f3708.js" as="script"><link rel="prefetch" href="/assets/js/11.0ff2f24e.js"><link rel="prefetch" href="/assets/js/12.be25feb1.js"><link rel="prefetch" href="/assets/js/13.b23fab9f.js"><link rel="prefetch" href="/assets/js/14.741dce68.js"><link rel="prefetch" href="/assets/js/15.5ef1eeea.js"><link rel="prefetch" href="/assets/js/16.193f6369.js"><link rel="prefetch" href="/assets/js/17.3d457883.js"><link rel="prefetch" href="/assets/js/3.0c13fd64.js"><link rel="prefetch" href="/assets/js/4.55092137.js"><link rel="prefetch" href="/assets/js/5.02018b5a.js"><link rel="prefetch" href="/assets/js/6.bd7b0c2a.js"><link rel="prefetch" href="/assets/js/7.2328732a.js"><link rel="prefetch" href="/assets/js/8.9d46e39f.js"><link rel="prefetch" href="/assets/js/9.46c9d80a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Lim Zhang Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link router-link-active">
+  Notes
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link router-link-active">
+  Notes
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>About Me</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/" aria-current="page" class="sidebar-link">关于Lim</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/javascript/eventloop/" class="sidebar-link">Event Loop</a></li><li><a href="/notes/javascript/scope/" aria-current="page" class="active sidebar-link">JavaScript 作用域</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/javascript/scope/#可执行代码" class="sidebar-link">可执行代码</a></li><li class="sidebar-sub-header"><a href="/notes/javascript/scope/#执行上下文栈-excution-context-stack-ecs" class="sidebar-link">执行上下文栈( Excution context stack, ECS)</a></li><li class="sidebar-sub-header"><a href="/notes/javascript/scope/#执行栈" class="sidebar-link">执行栈</a></li><li class="sidebar-sub-header"><a href="/notes/javascript/scope/#作用域" class="sidebar-link">作用域</a></li><li class="sidebar-sub-header"><a href="/notes/javascript/scope/#静态作用域与动态作用域" class="sidebar-link">静态作用域与动态作用域</a></li><li class="sidebar-sub-header"><a href="/notes/javascript/scope/#作用域链" class="sidebar-link">作用域链</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Node.js</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="javascript-作用域"><a href="#javascript-作用域" class="header-anchor">#</a> JavaScript 作用域</h1> <h2 id="可执行代码"><a href="#可执行代码" class="header-anchor">#</a> 可执行代码</h2> <p>JS的可执行代码只有三种</p> <ul><li><p>全局代码</p></li> <li><p>函数代码</p></li> <li><p>eval代码</p></li></ul> <h2 id="执行上下文栈-excution-context-stack-ecs"><a href="#执行上下文栈-excution-context-stack-ecs" class="header-anchor">#</a> 执行上下文栈( Excution context stack, ECS)</h2> <p>JavaScript 中有三种执行上下文类型。</p> <ul><li><p><strong>全局执行上下文</strong> — 这是默认或者说基础的上下文，任何不在函数内部的代码都在全局上下文中。它会执行两件事：创建一个全局的 window 对象（浏览器的情况下），并且设置 <code>this</code> 的值等于这个全局对象。一个程序中只会有一个全局执行上下文。</p></li> <li><p><strong>函数执行上下文</strong> — 每当一个函数被调用时, 都会为该函数创建一个新的上下文。每个函数都有它自己的执行上下文，不过是在函数被调用时创建的。函数上下文可以有任意多个。每当一个新的执行上下文被创建，它会按定义的顺序执行一系列步骤。</p></li> <li><p><strong>Eval 函数执行上下文</strong> — 执行在 <code>eval</code> 函数内部的代码也会有它属于自己的执行上下文，但由于 JavaScript 开发者并不经常使用 <code>eval</code>，所以在这里我不会讨论它。</p></li></ul> <h2 id="执行栈"><a href="#执行栈" class="header-anchor">#</a> 执行栈</h2> <p>执行栈，是一种拥有 LIFO（后进先出）数据结构的栈，被用来存储代码运行时创建的所有执行上下文。</p> <p>当 JavaScript 引擎第一次遇到你的脚本时，它会创建一个全局的执行上下文并且压入当前执行栈。每当引擎遇到一个函数调用，它会为该函数创建一个新的执行上下文并压入栈的顶部。</p> <p>引擎会执行那些执行上下文位于栈顶的函数。当该函数执行结束时，执行上下文从栈中弹出，控制流程到达当前栈中的下一个上下文。</p> <h2 id="作用域"><a href="#作用域" class="header-anchor">#</a> 作用域</h2> <p>作用域是指程序源代码中定义变量的区域。</p> <p>作用域规定了如何查找变量，也就是确定当前执行代码对变量的访问权限。</p> <p>JavaScript 采用词法作用域(lexical scoping)，也就是静态作用域。</p> <h2 id="静态作用域与动态作用域"><a href="#静态作用域与动态作用域" class="header-anchor">#</a> 静态作用域与动态作用域</h2> <ul><li>因为 JavaScript 采用的是词法作用域，函数的作用域在函数定义的时候就决定了。</li> <li>而与词法作用域相对的是动态作用域，函数的作用域是在函数调用的时候才决定的。</li></ul> <h4 id="example"><a href="#example" class="header-anchor">#</a> Example：</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 结果是 ???</span>
+
+</code></pre></div><p>假设JavaScript采用静态作用域，让我们分析下执行过程：</p> <p>执行 foo 函数，先从 foo 函数内部查找是否有局部变量 value，如果没有，就根据书写的位置，查找上面一层的代码，也就是 value 等于 1，所以结果会打印 1。</p> <p>假设JavaScript采用动态作用域，让我们分析下执行过程：</p> <p>执行 foo 函数，依然是从 foo 函数内部查找是否有局部变量 value。如果没有，就从调用函数的作用域，也就是 bar 函数内部查找 value 变量，所以结果会打印 2。</p> <p>JavaScript采用的是静态作用域，所以这个例子的结果是 1。</p> <h4 id="example2"><a href="#example2" class="header-anchor">#</a> Example2：</h4> <div class="language-js extra-class"><pre class="language-js"><code>比较下面两段代码，试述两段代码的不同之处
+<span class="token comment">// A--------------------------</span>
+<span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">&quot;global scope&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">checkscope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">&quot;local scope&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> scope<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">checkscope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// B---------------------------</span>
+<span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">&quot;global scope&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">checkscope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> scope <span class="token operator">=</span> <span class="token string">&quot;local scope&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> scope<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> f<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">checkscope</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>让我们模拟第一段代码：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>checkscope<span class="token operator">&gt;</span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>f<span class="token operator">&gt;</span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>让我们模拟第二段代码：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>checkscope<span class="token operator">&gt;</span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>f<span class="token operator">&gt;</span> functionContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ECStack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>两段代码都会打印：<code>local scope</code>。</p> <p>原因也很简单，因为JavaScript采用的是词法作用域，函数的作用域基于函数创建的位置。JavaScript 函数的执行用到了作用域链，这个作用域链是在函数定义的时候创建的。嵌套的函数 f() 定义在这个作用域链里，其中的变量 scope 一定是局部变量，不管何时何地执行函数 f()，这种绑定在执行 f() 时依然有效。</p> <h2 id="作用域链"><a href="#作用域链" class="header-anchor">#</a> 作用域链</h2> <p>当查找变量的时候，会先从当前上下文的变量对象中查找，如果没有找到，就会从父级(词法层面上的父级)执行上下文的变量对象中查找，一直找到全局上下文的变量对象，也就是全局对象。这样由多个执行上下文的变量对象构成的链表就叫做作用域链。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">1/5/2022, 10:39:57 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes/javascript/eventloop/" class="prev">
+        Event Loop
+      </a></span> <span class="next"><a href="/notes/vue/defineProperty/">
+        Object.defineProperty语法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d8aedcf0.js" defer></script><script src="/assets/js/2.e443283d.js" defer></script><script src="/assets/js/10.1f1f3708.js" defer></script>
+  </body>
+</html>

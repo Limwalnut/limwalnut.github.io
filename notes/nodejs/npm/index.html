@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>什么是NPM | Lim Zhang Blog</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="This is Lim Zhang&#39;s personal blog for sharing frontend development technology.">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.d8aedcf0.js" as="script"><link rel="preload" href="/assets/js/2.e443283d.js" as="script"><link rel="preload" href="/assets/js/11.0ff2f24e.js" as="script"><link rel="prefetch" href="/assets/js/10.1f1f3708.js"><link rel="prefetch" href="/assets/js/12.be25feb1.js"><link rel="prefetch" href="/assets/js/13.b23fab9f.js"><link rel="prefetch" href="/assets/js/14.741dce68.js"><link rel="prefetch" href="/assets/js/15.5ef1eeea.js"><link rel="prefetch" href="/assets/js/16.193f6369.js"><link rel="prefetch" href="/assets/js/17.3d457883.js"><link rel="prefetch" href="/assets/js/3.0c13fd64.js"><link rel="prefetch" href="/assets/js/4.55092137.js"><link rel="prefetch" href="/assets/js/5.02018b5a.js"><link rel="prefetch" href="/assets/js/6.bd7b0c2a.js"><link rel="prefetch" href="/assets/js/7.2328732a.js"><link rel="prefetch" href="/assets/js/8.9d46e39f.js"><link rel="prefetch" href="/assets/js/9.46c9d80a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Lim Zhang Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link router-link-active">
+  Notes
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/notes/" class="nav-link router-link-active">
+  Notes
+</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>About Me</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/" aria-current="page" class="sidebar-link">关于Lim</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Python</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Node.js</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/nodejs/npm/" aria-current="page" class="active sidebar-link">什么是NPM</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes/nodejs/npm/#什么是npm" class="sidebar-link">什么是NPM</a></li><li class="sidebar-sub-header"><a href="/notes/nodejs/npm/#npm-源设置" class="sidebar-link">NPM 源设置</a></li><li class="sidebar-sub-header"><a href="/notes/nodejs/npm/#s" class="sidebar-link">-S</a></li><li class="sidebar-sub-header"><a href="/notes/nodejs/npm/#d" class="sidebar-link">-D</a></li><li class="sidebar-sub-header"><a href="/notes/nodejs/npm/#安装版本" class="sidebar-link">安装版本</a></li><li class="sidebar-sub-header"><a href="/notes/nodejs/npm/#与yarn对比" class="sidebar-link">与Yarn对比</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="什么是npm"><a href="#什么是npm" class="header-anchor">#</a> 什么是NPM</h2> <p>NPM 是 Node.js 中的包管理器。允许我们为 Node.js 安装各种模块，这个包管理器为我们提供了安装、删除等其它命令来管理模块。这里有一点我们需要注意，我们必须要有一个 package.json 文件或 node_modules 目录安装模块到本地。</p> <p>执行命令 <code>npm i module -S/D</code> 安装模块后，会在本地存储我们所安装的依赖项，存在于 <code>package.json</code> 的 <code>dependencies/devDependencies</code> 对象里。例如，如果一个模块 X 使用了模块 A 版本为 1.0，模块 Y 使用了模块 A 版本为 1.5，那么模块 X 或 Y 都将在本地拥有自己对应的模块 A 的副本。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 模块 X</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;X&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;dependencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;A&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.0&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 模块 Y</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Y&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;dependencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;A&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.5&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="npm-源设置"><a href="#npm-源设置" class="header-anchor">#</a> NPM 源设置</h2> <p>在国内有时候受限于网络因素的影响，通常在安装一个包管理器之前可以切换为<a href="https://npmmirror.com/" target="_blank" rel="noopener noreferrer"> 淘宝 NPM 镜像<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，加速安装速度，但是要注意如果是私有模块在 NPM 官方的，则必须切换为官方源，否则会出现 404 错误。</p> <p><strong>查看当前 npm 源</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code>  <span class="token function">npm</span> config get registry
+  <span class="token comment"># http://registry.npmjs.org/</span>
+</code></pre></div><p><strong>切换为 taobao 源</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code>  <span class="token function">npm</span> config <span class="token builtin class-name">set</span> <span class="token assign-left variable">registry</span><span class="token operator">=</span>https://registry.npmmirror.com
+</code></pre></div><p><strong>切换为 npm 官方源</strong></p> <p>在 npm publish 的时候 需要切换回 npm 源</p> <div class="language-shell extra-class"><pre class="language-shell"><code>  <span class="token function">npm</span> config <span class="token builtin class-name">set</span> <span class="token assign-left variable">registry</span><span class="token operator">=</span>http://registry.npmjs.org
+</code></pre></div><p>如果不想全局设置，执行 npm 命令时也可通过参数传递镜像地址 <code>npm i module --registry=https://registry.npmmirror.com</code>。</p> <h2 id="s"><a href="#s" class="header-anchor">#</a> -S</h2> <div class="language- extra-class"><pre class="language-text"><code>即--save（保存）
+包名会被注册在package.json的dependencies里面，在生产环境下这个包的依赖依然存在
+</code></pre></div><h2 id="d"><a href="#d" class="header-anchor">#</a> -D</h2> <div class="language- extra-class"><pre class="language-text"><code>即--dev（生产）
+包名会被注册在package.json的devDependencies里面，仅在开发环境下存在的包用-D，如babel，sass-loader这些解析器
+</code></pre></div><h2 id="安装版本"><a href="#安装版本" class="header-anchor">#</a> 安装版本</h2> <p>Package.json中：</p> <div class="language- extra-class"><pre class="language-text"><code>&quot;5.0.3&quot;,
+&quot;~5.0.3&quot;,
+&quot;^5.0.3&quot;
+</code></pre></div><p>“5.0.3”表示安装指定的5.0.3版本，“～5.0.3”表示安装5.0.X中最新的版本，“^5.0.3”表示安装5.X.X中最新的版本。</p> <h2 id="与yarn对比"><a href="#与yarn对比" class="header-anchor">#</a> 与Yarn对比</h2> <ol><li>npm是按照队列执行安装任务，yarn为并行安装</li> <li>离线模式：如果之前已经安装过一个软件包，用Yarn再次安装时之间从缓存中获取，就不用像npm那样再从网络下载了。</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes/python/referenceAndCopy/" class="prev">
+        引用赋值
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d8aedcf0.js" defer></script><script src="/assets/js/2.e443283d.js" defer></script><script src="/assets/js/11.0ff2f24e.js" defer></script>
+  </body>
+</html>
